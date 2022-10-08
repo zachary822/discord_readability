@@ -28,11 +28,7 @@ class SpacyReadability:
         num_words = sum(1 for t in doc if not t.is_punct)
         num_syllables = sum(c for t in doc if (c := t._.syllables_count))
         try:
-            grade = (
-                (11.8 * num_syllables / num_words)
-                + (0.39 * num_words / num_sentences)
-                - 15.59
-            )
+            grade = (11.8 * num_syllables / num_words) + (0.39 * num_words / num_sentences) - 15.59
             doc._.set("flesch_kincaid_grade", grade)
         except ZeroDivisionError:
             pass
