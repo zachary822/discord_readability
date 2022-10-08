@@ -9,6 +9,8 @@ packages = [{include = "discord_readability"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 awslambdaric = "^2.0.4"
+spacy = "^3.4.1"
+pyphen = "^0.13.0"
 
 
 [build-system]

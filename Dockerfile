@@ -17,6 +17,8 @@ COPY poetry.lock pyproject.toml ./
 
 RUN  poetry install --no-root
 
+RUN python -m spacy download en_core_web_sm
+
 COPY . .
 
 ENTRYPOINT ["/usr/local/bin/python", "-m", "awslambdaric"]
