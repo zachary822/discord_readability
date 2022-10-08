@@ -32,7 +32,10 @@ def handler(event, context):
         resp = session.patch(
             f"https://discord.com/api/webhooks/{interaction.application_id}/{interaction.token}/messages/@original",
             json={
-                "content": f"Flesch-Kincaid grade level: {doc._.flesch_kincaid_grade:.3}",
+                "content": (
+                    f"Flesch-Kincaid grade level: {doc._.flesch_kincaid_grade:.3}\n"
+                    + f"original: https://discord.com/channels/{interaction.guild_id}/{interaction.channel_id}/{message.id}"  # noqa: E501
+                ),
                 "message_reference": {
                     "channel_id": interaction.channel_id,
                     "guild_id": interaction.guild_id,
