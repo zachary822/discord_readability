@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "discord-readability"
+version = "0.1.0"
+description = ""
+authors = ["Zachary Juang <zachary822@me.com>"]
+readme = "README.md"
+packages = [{include = "discord_readability"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
