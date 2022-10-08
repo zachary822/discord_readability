@@ -2,6 +2,7 @@ from pydantic import BaseModel
 
 
 class Message(BaseModel):
+    id: str
     content: str
 
 
@@ -19,6 +20,7 @@ class InteractionData(BaseModel):
 
 class Interaction(BaseModel):
     application_id: str
+    guild_id: str
     channel_id: str
     data: InteractionData
     token: str
