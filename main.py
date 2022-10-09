@@ -36,11 +36,7 @@ def handler(event, context):
                     f"Flesch-Kincaid grade level: {doc._.flesch_kincaid_grade:.3}\n"
                     + f"original: https://discord.com/channels/{interaction.guild_id}/{interaction.channel_id}/{message.id}"  # noqa: E501
                 ),
-                "message_reference": {
-                    "channel_id": interaction.channel_id,
-                    "guild_id": interaction.guild_id,
-                    "message_id": message.id,
-                },
+                "flags": 1 << 6,
             },
         )
         logger.info("status: %s body: %s", resp.status_code, resp.text)
